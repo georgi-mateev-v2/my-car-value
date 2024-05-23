@@ -1,0 +1,48 @@
+### Find a user by id~
+GET http://localhost:3000/auth/1
+
+### Find all users with email
+GET http://localhost:3000/auth?email=test@test.com
+
+### Delete user with given id
+DELETE http://localhost:3000/auth/2
+
+### Update user
+PATCH http://localhost:3000/auth/1
+content-type: application/json
+
+{
+  "password": "testPassword"
+}
+
+// AUTH
+
+### Create a new user
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+  "email": "aaaaaa@test.com",
+  "password": "password"
+}
+
+### Singin user
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+  "email": "aaaaaa@test.com",
+  "password": "password"
+}
+
+### Get currently signed user
+GET http://localhost:3000/auth/whoami
+
+### Sign out
+POST http://localhost:3000/auth/signout
+
+### Set color
+### GET http://localhost:3000/auth/colors/blue
+
+### Get color
+### GET http://localhost:3000/auth/colors
