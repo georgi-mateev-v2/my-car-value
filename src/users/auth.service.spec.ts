@@ -62,4 +62,13 @@ describe('AuthService', () => {
       service.signin('email@email.com', 'passowrd'),
     ).rejects.toThrow(BadRequestException);
   });
+
+	it('returns a user on correct password', async () => {
+		// fakeUsersService.find = () =>
+		// 	Promise.resolve([{ email: 'email@email.com', password: 'password' } as User]);
+
+		// const user = await service.signin('email@email.com', 'password');
+		// expect(user).toBeDefined();
+		const user = await service.signup('email@email.com', 'password')
+	})
 })
