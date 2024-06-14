@@ -8,7 +8,7 @@ Content-Type: application/json
   "mileage": 230000,
   "lng": 0,
   "lat": 0,
-  "price": 500
+  "price": 1700
 }
 
 ### Approve existing report
@@ -20,4 +20,4 @@ Content-Type: application/json
 }
 
 ### Get an estimate fon an existing vehicle
-GET http://localhost:3000/reports?make=toyota&model=corolla&lng=0&lat=0&mileage=230000&year=1980
+GET http://localhost:3000/reports?make=toyota&model=corrola&lng=0&lat=0&mileage=230000&year=1980
