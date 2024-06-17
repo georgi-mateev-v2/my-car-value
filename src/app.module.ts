@@ -12,6 +12,7 @@ const cookieSession = require('cookie-session');
 
 @Module({
   imports: [
+    // config service, reads the .env files
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.NODE_ENV}`
@@ -42,11 +43,14 @@ const cookieSession = require('cookie-session');
   ],
 })
 export class AppModule {
+  constructor(
+    private configService: ConfigService
+  ) {}
   configure(consumer: MiddlewareConsumer) {
     consumer
     .apply(
       cookieSession({
-        keys: ['randomstring'],
+        keys: [this.configService.get('COOKIE_KEY')],
     })
   )
   .forRoutes('*')
